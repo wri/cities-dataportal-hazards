@@ -1,1 +1,6 @@
-
+matplotlib
+ee
+geemap
+ipywidgets
+ipyleaflet
+asyncio
