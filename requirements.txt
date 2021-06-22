@@ -4,3 +4,4 @@ geemap
 ipywidgets
 ipyleaflet
 asyncio
+voila
