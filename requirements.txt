@@ -1,5 +1,6 @@
 ipympl
 matplotlib
+StringIO
 ee
 geemap
 ipywidgets
