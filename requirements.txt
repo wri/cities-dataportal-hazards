@@ -4,5 +4,6 @@ earthengine-api>=0.1.230
 geemap
 ipywidgets
 ipyleaflet
+numpy
 asyncio
 voila
