@@ -100,18 +100,18 @@ def modlandslide(vardata, year, model=None, is_nex=True):
 		tdate = start_date - timedelta(days=tt)
 		if is_nex:
 			modelscenario_data = modeldata.filterMetadata('scenario', 'equals', ['historical', 'rcp85'][(tdate.year > 2005) * 1])
-			precip_list = precip_list.add(modelscenario_data.filterDate(tdate.isoformat(), (tdate + timedelta(days=1)).isoformat()).first().multiply(8640))
+			precip_list = precip_list.add(modelscenario_data.filterDate(tdate.isoformat(), (tdate + timedelta(days=1)).isoformat()).first().multiply(864000)) # ARI map based on data w precip measured as 0.1mm/day
 		else:
-			precip_list = precip_list.add(modeldata.filterDate(tdate.isoformat(), (tdate + timedelta(days=1)).isoformat()).first().multiply(0.0001))
+			precip_list = precip_list.add(modeldata.filterDate(tdate.isoformat(), (tdate + timedelta(days=1)).isoformat()).first().multiply(10000))
 	for datediff in range((end_date - start_date).days + ([0, -1][(isleap(year) and model in NOLEAP_MODELS) * 1])):
 		focal_date = skipleap(start_date + timedelta(days = datediff), model)
 		if is_nex:
 			modelscenario_data = modeldata.filterMetadata('scenario', 'equals', ['historical', 'rcp85'][(focal_date.year > 2005) * 1])
 		precip_list = precip_list.slice(1, 7)  #Every day remove one, add one
 		if is_nex:
-			precip_list = precip_list.add(modelscenario_data.filterDate(focal_date.isoformat(), (skipleap(focal_date + timedelta(days=1), model)).isoformat()).first().multiply(8640))
+			precip_list = precip_list.add(modelscenario_data.filterDate(focal_date.isoformat(), (skipleap(focal_date + timedelta(days=1), model)).isoformat()).first().multiply(864000))
 		else:
-			precip_list = precip_list.add(modeldata.filterDate(focal_date.isoformat(), (skipleap(focal_date + timedelta(days=1), model)).isoformat()).first().multiply(0.0001))
+			precip_list = precip_list.add(modeldata.filterDate(focal_date.isoformat(), (skipleap(focal_date + timedelta(days=1), model)).isoformat()).first().multiply(10000))
 		numerator = ee.Image.constant(0)
 		denominator = ee.Image.constant(0)
 		for t in range(7):
@@ -135,18 +135,18 @@ def highlandslide(vardata, year, model=None, is_nex=True):
 		tdate = start_date - timedelta(days=tt)
 		if is_nex:
 			modelscenario_data = modeldata.filterMetadata('scenario', 'equals', ['historical', 'rcp85'][(tdate.year > 2005) * 1])
-			precip_list = precip_list.add(modelscenario_data.filterDate(tdate.isoformat(), (tdate + timedelta(days=1)).isoformat()).first().multiply(8640))
+			precip_list = precip_list.add(modelscenario_data.filterDate(tdate.isoformat(), (tdate + timedelta(days=1)).isoformat()).first().multiply(864000))
 		else:
-			precip_list = precip_list.add(modeldata.filterDate(tdate.isoformat(), (tdate + timedelta(days=1)).isoformat()).first().multiply(0.0001))
+			precip_list = precip_list.add(modeldata.filterDate(tdate.isoformat(), (tdate + timedelta(days=1)).isoformat()).first().multiply(10000))
 	for datediff in range((end_date - start_date).days + ([0, -1][(isleap(year) and model in NOLEAP_MODELS) * 1])):
 		focal_date = skipleap(start_date + timedelta(days = datediff), model)
 		if is_nex:
 			modelscenario_data = modeldata.filterMetadata('scenario', 'equals', ['historical', 'rcp85'][(focal_date.year > 2005) * 1])
 		precip_list = precip_list.slice(1, 7)  #Every day remove one, add one
 		if is_nex:
-			precip_list = precip_list.add(modelscenario_data.filterDate(focal_date.isoformat(), (skipleap(focal_date + timedelta(days=1), model)).isoformat()).first().multiply(8640))
+			precip_list = precip_list.add(modelscenario_data.filterDate(focal_date.isoformat(), (skipleap(focal_date + timedelta(days=1), model)).isoformat()).first().multiply(864000))
 		else:
-			precip_list = precip_list.add(modeldata.filterDate(focal_date.isoformat(), (skipleap(focal_date + timedelta(days=1), model)).isoformat()).first().multiply(0.0001))
+			precip_list = precip_list.add(modeldata.filterDate(focal_date.isoformat(), (skipleap(focal_date + timedelta(days=1), model)).isoformat()).first().multiply(10000))
 		numerator = ee.Image.constant(0)
 		denominator = ee.Image.constant(0)
 		for t in range(7):
