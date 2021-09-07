@@ -1,1 +1,1 @@
-echo ${GOOGLE_CREDENTIAL} > /app/data-portal-adaptation.json
+echo $GOOGLE_CREDENTIAL > /app/data-portal-adaptation.json
