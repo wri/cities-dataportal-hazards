@@ -30,7 +30,6 @@ ffmpeg-python==0.2.0
 Fiona
 folium==0.12.1
 future==0.18.2
-GDAL
 geeadd==0.5.5
 -e git+https://github.com/tracek/gee_asset_manager@80ad23c669ebeb13bc836f9a6a2d088ec3b8a123#egg=geebam
 geemap==0.8.16
