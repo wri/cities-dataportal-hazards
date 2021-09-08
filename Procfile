@@ -1,1 +1,1 @@
-web: voila --port=$PORT --no-browser 06.1_dashboard.ipynb
+web: voila --port=$PORT --no-browser 0.0_voila_test.ipynb
