@@ -7,6 +7,6 @@ Many of the calculations require asynchronous processing by [Google Earth Engine
 The workbooks are numbered to correspond to this diagram:
 ![workflow diagram](workflow.png)
 
-Send code-specific inquiries to: **Ted Wong** (ted.wong@wri.org), Ross Center for Sustainable Cities, World Resources Institute
+Send inquiries regarding notebooks, images, and other items in this repo to ted.wong@wri.org.
 
-Also note that this is a work-in-progress repository. It is not yet an official WRI repository. For more information about the project status, please contact Eric.Mackres@wri.org.
+Every item in this repository is a work in progress and should not be considered official WRI products or releases. For more information about the project status, please contact Eric.Mackres@wri.org.
