@@ -1,4 +1,5 @@
 earthengine-api
+geemap==0.8.16
 numpy
 scipy
 numpy-groupies
